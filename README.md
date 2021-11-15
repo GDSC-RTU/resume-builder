@@ -60,5 +60,5 @@ Creating a resume is a bit tedious task for any working professional from any in
   
 ## Discussions
 
-We are using Github discussions to facilitate communication bewtween the organization and the contributors. You can post all your suggestions/queries there or alternatively you can write a mail to the mentor (Shubham Gautam)[https://github.com/ishubham21] at ishubham2101@gmail.com
+We are using Github discussions to facilitate communication bewtween the organization and the contributors. You can post all your suggestions/queries there or alternatively you can write a mail to the mentor Shubham Gautam (@ishubham21) at ishubham2101@gmail.com
   
