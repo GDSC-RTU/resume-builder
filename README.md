@@ -9,18 +9,53 @@ Creating a resume is a bit tedious task for any working professional from any in
 - Process the information on the server(Node) and using some HTML to PDF libraries to generate the resume.
 - Finally, make it auto-download on client side.
 
-# Getting Started with Create React App
+## How to setup and run the application  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+* Make sure that you have node and npm installed. In your terminal, run - 
+  
+  ```
+  node --version
+  ```
+  
+  To install node, head over to [this website](https://nodejs.org/en/download/) and download the stable release. 
 
-In the client directory, you can run:
+* Fork and clone this repository by runinng the following command in your terminal - 
+  
+  ```
+  git clone https://github.com/<your_github_username>/resume-builder
+  ```
 
-### `npm start`
+* cd into the cloned repository using the following command - 
+  
+  ```
+  cd resume-builder
+  ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* Install all the dependencies for the server side using the command -
+  
+  ```
+  npm install
+  ```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* The server can be run using the command - 
+  ```
+  npm run start
+  ```
+
+* The server now can be accessed on the port 4000
+
+* The To install all the dependencies of the client side, run the following commands in your terminal
+  ```
+  cd client
+  npm install
+  ```
+
+* To start using create-reacta-app, run the following command in the terminal (make sure you don't kill the previous terminal)
+  ```
+  npm run start
+  ```
+
+* You will be automatically taken to the development server where you can see the live application
+  
+  
