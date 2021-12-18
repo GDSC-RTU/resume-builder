@@ -1,12 +1,12 @@
 import './App.css';
 import Experience from './components/personalDetails';
+import Education from './components/education';
+
 function App() {
   return (
     <div className="App">
-        <Experience>
-          key={Experience.id}
-          name={Experience.name}
-        </Experience>
+        {/* <Experience/>     */}
+        <Education/>
     </div>
   );
 }
