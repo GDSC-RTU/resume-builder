@@ -1,7 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import e from 'cors';
 
 class Education extends React.Component {
     constructor(props) {
@@ -39,6 +36,12 @@ class Education extends React.Component {
       }
     
       handleSubmit(event) {
+        if(this.state.degree!=="Custom Degree")
+          this.setState({[this.state.custom_degree] : ""});
+
+        if(this.state.isChecked)
+          this.setState({[this.state.graduating_year] : ""});
+
         console.log(this.state);
         event.preventDefault();
       }
