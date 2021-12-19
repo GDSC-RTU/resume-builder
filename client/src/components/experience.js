@@ -25,7 +25,7 @@ class Experience extends React.Component {
         const target = event.target;
         const value = target.value;
         const name = target.name;
-
+        console.log(name,value)
         this.setState({
           [name]:value
         })
@@ -105,7 +105,7 @@ class Experience extends React.Component {
             </label>
             <label>
               Start year
-              <select className="graduating_year" value={this.state.value} onChange={this.handleChange}>
+              <select name="start_year" value={this.state.start_year} onChange={this.handleChange}>
                   <option value="">--Select--</option>
                   <option value={this.getYear(0)}>{this.getYear(0)}</option>
                   <option value={this.getYear(1)}>{this.getYear(1)}</option>
@@ -121,7 +121,7 @@ class Experience extends React.Component {
             </label>
             <label>
               End month
-              <select name="start_month" value={this.state.start_month} onChange={this.handleChange} disabled={this.state.isChecked===true}>
+              <select name="end_month" value={this.state.end_month} onChange={this.handleChange} disabled={this.state.isChecked===true}>
                 <option>--Select--</option>
                 <option value={this.getMonth(0)}>{this.getMonth(0)}</option>
                 <option value={this.getMonth(1)}>{this.getMonth(1)}</option>
@@ -139,7 +139,7 @@ class Experience extends React.Component {
             </label>
             <label>
               End Year            
-              <select className="end_year" value={this.state.end_year} onChange={this.handleChange} disabled={this.state.isChecked===true}>
+              <select name="end_year" value={this.state.end_year} onChange={this.handleChange} disabled={this.state.isChecked===true}>
                   <option value="">--Select--</option>
                   <option value={this.getYear(0)}>{this.getYear(0)}</option>
                   <option value={this.getYear(1)}>{this.getYear(1)}</option>
