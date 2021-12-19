@@ -1,7 +1,7 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import Dropdown from 'react-bootstrap/Dropdown';
+import e from 'cors';
 
 class Education extends React.Component {
     constructor(props) {
@@ -12,12 +12,15 @@ class Education extends React.Component {
           state_college : '',
           degree : '',
           field_of_study : '',
-          graduating_year : ''
+          graduating_year : '',
+          custom_degree: '',
+          isChecked : false
         };
     
         this.handleChange = this.handleChange.bind(this);
         this.handleReset = this.handleReset.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.toggleChange = this.toggleChange.bind(this);
       }
     
       handleChange(event) {
@@ -31,9 +34,7 @@ class Education extends React.Component {
       }
   
       handleReset(event){
-        //event.target.reset();
         console.log("Reset!");
-        //this.myFormRef.reset();
         window.location.reload(false);
       }
     
@@ -53,6 +54,12 @@ class Education extends React.Component {
         return(year_list[i])
       }
 
+      toggleChange(){
+        this.setState({
+          isChecked: !this.state.isChecked
+        })
+      }
+      
     render() { 
     return ( 
         <form onSubmit={this.handleSubmit} ref={(el) => this.myFormRef = el}>
@@ -90,10 +97,13 @@ class Education extends React.Component {
                       <option value="J.D.">J.D.</option>
                       <option value="M.D.">M.D.</option>
                       <option value="Ph.D.">Ph.D.</option>
-                      <option value="Custom Degree">Custom Degree</option>
+                      <option value="Custom Degree" onSelect={this.createNewInput}>Custom Degree</option>
                       </select>
                     </div>
                 </div>
+            </label>
+            <label>
+              <input type="text" name="custom_degree" onChange={this.handleChange} disabled={this.state.degree!=="Custom Degree"}/>
             </label>
             <br/>
             <label>
@@ -102,7 +112,7 @@ class Education extends React.Component {
             </label>
             <label>
                 Graduating Year
-                <select name="graduating_year" value={this.state.value} onChange={this.handleChange}>
+                <select className="graduating_year" value={this.state.value} onChange={this.handleChange} disabled={this.state.isChecked===true}>
                   <option value="">--Select--</option>
                   <option value={this.getYear(0)}>{this.getYear(0)}</option>
                   <option value={this.getYear(1)}>{this.getYear(1)}</option>
@@ -116,7 +126,7 @@ class Education extends React.Component {
                   <option value={this.getYear(9)}>{this.getYear(9)}</option>
                 </select>
                 <p>
-                    <input type="checkbox" name="group" id="group" value="1" title="Main List" />
+                    <input type="checkbox" name="current_study_check" id="group" checked={this.state.isChecked} onChange={this.toggleChange}/>
                     <label htmlFor="group">
                         currently studying
                     </label>
