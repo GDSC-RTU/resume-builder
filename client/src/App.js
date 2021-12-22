@@ -1,12 +1,14 @@
 import './App.css';
-import Experience from './components/personalDetails';
+import personalDetails from './components/personalDetails';
+import Education from './components/education';
+import Experience from './components/experience';
+
 function App() {
   return (
     <div className="App">
-        <Experience>
-          key={Experience.id}
-          name={Experience.name}
-        </Experience>
+        {/* <Name/>     */}
+        {/* <Education/> */}
+        <Experience/>
     </div>
   );
 }

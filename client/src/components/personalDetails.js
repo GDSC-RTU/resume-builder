@@ -1,6 +1,6 @@
 import React from 'react';
 
-class NameForm extends React.Component {
+class PersonDetails extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -34,6 +34,7 @@ class NameForm extends React.Component {
       //event.target.reset();
       console.log("Reset!");
       //this.myFormRef.reset();
+      window.location.reload(false);
     }
   
     handleSubmit(event) {
@@ -86,7 +87,7 @@ class NameForm extends React.Component {
           </label>
             <label>
             Phone Number:
-            <input type="tel" name="phoneNo" pattern="[+]{1}[0-9]{2}-[0-9]{10}" value={this.state.phoneNo} onChange={this.handleChange} />
+            <input type="tel" name="phoneNo" pattern="[+]{1}[0-9]{2}-[0-9]{10}" placeholder=' Eg +91-834532XXXXX' value={this.state.phoneNo} onChange={this.handleChange} />
             </label>
           </p>
           <input type="reset" value="Reset" onClick={this.handleReset}/>
@@ -96,4 +97,4 @@ class NameForm extends React.Component {
     }
   }
 
-export default NameForm;
+export default PersonDetails;
