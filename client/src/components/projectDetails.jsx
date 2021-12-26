@@ -10,6 +10,8 @@ class Project extends React.Component {
 
     AddToList(data){
         console.log(data);
+        const newList= [ ...this.state.List, data ];
+        this.setState({ List : newList })
     }
 
     render() { 
