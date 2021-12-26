@@ -11,7 +11,7 @@ class ProjectForm extends React.Component {
     
         this.handleChange = this.handleChange.bind(this);
         this.handleReset = this.handleReset.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleAdd = this.handleAdd.bind(this);
     }
     
     handleChange(event) {
@@ -29,7 +29,7 @@ class ProjectForm extends React.Component {
         window.location.reload(false);
     }
     
-    handleSubmit(event) {
+    handleAdd(event) {
         event.preventDefaut();
         const payload = { project_name : this.state.project_name , link_url : this.state.link_url , description : this.state.description }
         this.props.AddToList(payload);
