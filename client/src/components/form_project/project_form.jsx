@@ -5,7 +5,7 @@ class ProjectForm extends React.Component {
     super(props);
     this.state = {
             project_name : '',
-            link : '',
+            link_url : '',
             description : ''
         };
     
@@ -31,12 +31,8 @@ class ProjectForm extends React.Component {
     
     handleSubmit(event) {
         event.preventDefaut();
-        const regex=/[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
-        if( this.state.link.match(regex) )
-        { 
-            const payload = { project_name : this.state.project_name , link : this.state.link , description : this.state.description }
-            this.props.AddToList(payload);
-        }
+        const payload = { project_name : this.state.project_name , link_url : this.state.link_url , description : this.state.description }
+        this.props.AddToList(payload);
     }
 
     render() { 
@@ -48,8 +44,8 @@ class ProjectForm extends React.Component {
                 <input type="text" name="project_name" value={this.state.project_name} onChange={this.handleChange}></input>
                 </span>
                 <span>
-                Link 
-                <input type="text" name="link" value={this.state.link} onChange={this.handleChange}></input>
+                Link
+                <input type="text" name="link_url" value={this.state.link_url} onChange={this.handleChange}></input>
                 </span>
                 <br/>
                 <span>
@@ -57,8 +53,8 @@ class ProjectForm extends React.Component {
                 <input type="text" name="description" value={this.state.description} onChange={this.handleChange}></input>
                 </span>
                 <br/>
-                <button type="reset" value="Reset" onClick={this.handleReset}>Reset</button>
-                <button type="submit" value="Submit" onClick={this.handleSubmit}>Submit</button>
+                <button type="reset"onClick={this.handleReset}>Reset</button>
+                <button type="Add" onClick={this.handleAdd}>Add</button>
             </form> 
         </div>
     )}
