@@ -161,7 +161,7 @@ class Experience extends React.Component {
                   </p>
               <br/>
             <input type="reset" value="Reset" onClick={this.handleReset}/>
-            <input type="submit" value="Submit" />  
+            <input type="submit" value="Submit" onClick={this.handleSubmit}/>  
         </form>
     )}
 }

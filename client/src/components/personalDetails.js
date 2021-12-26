@@ -91,7 +91,7 @@ class PersonDetails extends React.Component {
             </label>
           </p>
           <input type="reset" value="Reset" onClick={this.handleReset}/>
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Submit" onClick={this.handleSubmit}/>
         </form>
       );
     }

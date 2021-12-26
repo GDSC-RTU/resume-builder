@@ -137,7 +137,7 @@ class Education extends React.Component {
             </label>
             <br/>
             <input type="reset" value="Reset" onClick={this.handleReset}/>
-            <input type="submit" value="Submit" />      
+            <input type="submit" value="Submit" onClick={this.handleSubmit}/>      
         </form>
     );
     }
