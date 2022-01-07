@@ -1,4 +1,5 @@
 import React from 'react';
+import {v4 as uuid} from 'uuid';
 
 class ProjectForm extends React.Component {
     constructor(props) {
@@ -10,7 +11,6 @@ class ProjectForm extends React.Component {
         };
     
         this.handleChange = this.handleChange.bind(this);
-        this.handleReset = this.handleReset.bind(this);
         this.handleAdd = this.handleAdd.bind(this);
     }
     
@@ -23,22 +23,20 @@ class ProjectForm extends React.Component {
           [name]:value
         })
     }
-  
-    handleReset(){
-        console.log("Reset!");
-        window.location.reload(false);
-    }
     
-    handleAdd(event) {
-        event.preventDefaut();
-        const payload = { project_name : this.state.project_name , link_url : this.state.link_url , description : this.state.description }
-        this.props.AddToList(payload);
+    handleAdd() {
+        if( this.state.project_name!=="" && this.state.link_url!=="" && this.state.description!=="" ){
+        const payload = { id : uuid() , project_name : this.state.project_name , link_url : this.state.link_url , description : this.state.description }
+        this.props.sendData(payload);
+        this.setState({ project_name : '' });
+        this.setState({ link_url : '' });
+        this.setState({ description : '' });}
     }
 
     render() { 
         return (
         <div>
-            <form>
+            <div>
                 <span>
                 Project Name : 
                 <input type="text" name="project_name" value={this.state.project_name} onChange={this.handleChange}></input>
@@ -53,9 +51,8 @@ class ProjectForm extends React.Component {
                 <input type="text" name="description" value={this.state.description} onChange={this.handleChange}></input>
                 </span>
                 <br/>
-                <button type="reset"onClick={this.handleReset}>Reset</button>
                 <button type="Add" onClick={this.handleAdd}>Add</button>
-            </form> 
+            </div> 
         </div>
     )}
 }
