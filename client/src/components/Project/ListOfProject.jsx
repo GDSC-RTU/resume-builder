@@ -1,4 +1,4 @@
-function ListOfProjects( { List , deleteProject } ){
+function ListOfProject( { List , deleteProject } ){
 
     function handleDelete(id){
        deleteProject(id)
@@ -14,4 +14,4 @@ function ListOfProjects( { List , deleteProject } ){
             <button type="delete" onClick={()=>handleDelete(e.id)}>Delete</button></div>)
     )
 }
-export default ListOfProjects;
+export default ListOfProject;

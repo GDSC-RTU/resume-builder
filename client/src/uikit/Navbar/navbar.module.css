@@ -1,0 +1,14 @@
+.container{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.routes{
+  border: 1px solid black;
+  height: 100vh;
+}
+
+.moduleContainer{
+  width: 100%;
+}

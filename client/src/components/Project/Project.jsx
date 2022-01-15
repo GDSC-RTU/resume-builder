@@ -1,6 +1,7 @@
 import React from 'react';
-import ProjectForm from './form_project/project_form';
-import ListOfProjects from './form_project/ListOfProjects';
+import ProjectForm from './ProjectForm';
+import ListOfProject from './ListOfProject';
+import styles from './project.module.css';
 
 class Project extends React.Component {
     constructor(props) {
@@ -24,14 +25,14 @@ class Project extends React.Component {
 
     render() { 
         return (
-        <div>
+        <div className={styles.projectComponent}>
             <h1>Project Details</h1>
             {console.log(this.state.List)}
             <ProjectForm
             List={this.List}
             sendData={this.AddToList}
             />
-            <ListOfProjects
+            <ListOfProject
             List={this.state.List}
             deleteProject={this.DeleteFromList}/>
         </div>
