@@ -1,5 +1,7 @@
 import React from 'react';
 import {v4 as uuid} from 'uuid';
+import Button from 'react-bootstrap/Button';
+import Form from  'react-bootstrap/Form';
 
 class ProjectForm extends React.Component {
     constructor(props) {
@@ -36,7 +38,7 @@ class ProjectForm extends React.Component {
     render() { 
         return (
         <div>
-            <div>
+            <Form>
                 <span>
                 Project Name : 
                 <input type="text" name="project_name" value={this.state.project_name} onChange={this.handleChange}></input>
@@ -51,8 +53,8 @@ class ProjectForm extends React.Component {
                 <input type="text" name="description" value={this.state.description} onChange={this.handleChange}></input>
                 </span>
                 <br/>
-                <button type="Add" onClick={this.handleAdd}>Add</button>
-            </div> 
+                <Button type="Add" onClick={this.handleAdd}>Add</Button>
+            </Form> 
         </div>
     )}
 }

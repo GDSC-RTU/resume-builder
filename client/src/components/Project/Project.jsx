@@ -1,7 +1,6 @@
 import React from 'react';
 import ProjectForm from './ProjectForm';
 import ListOfProject from './ListOfProject';
-import styles from './project.module.css';
 
 class Project extends React.Component {
     constructor(props) {
@@ -25,7 +24,7 @@ class Project extends React.Component {
 
     render() { 
         return (
-        <div className={styles.projectComponent}>
+        <div>
             <h1>Project Details</h1>
             {console.log(this.state.List)}
             <ProjectForm

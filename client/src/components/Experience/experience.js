@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 
 class Experience extends React.Component {
     constructor(props) {
@@ -14,32 +15,17 @@ class Experience extends React.Component {
             end_year: '',
             isChecked: false
         };
-
-        this.handleChange = this.handleChange.bind(this);
-        this.handleReset = this.handleReset.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.toggleChange = this.toggleChange.bind(this);
       }
     
-      handleChange(event) {
-        const target = event.target;
-        const value = target.value;
-        const name = target.name;
-        console.log(name,value)
-        this.setState({
-          [name]:value
-        })
+      back  = (e) => {
+        e.preventDefault();
+        this.props.prevStep();
       }
   
-      handleReset(event){
-        console.log("Reset!");
-        window.location.reload(false);
-      }
-    
-      handleSubmit(event) {
-        console.log(this.state);
-        event.preventDefault();
-      }
+      saveAndContinue = (e) => {
+        e.preventDefault();
+        this.props.nextStep();
+      };
 
       getMonth=(i)=>{
         const months=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -57,7 +43,7 @@ class Experience extends React.Component {
         return(year_list[i])
       }
 
-      toggleChange(){
+      toggleChange=()=>{
         this.setState({
           isChecked: !this.state.isChecked
         })
@@ -159,9 +145,8 @@ class Experience extends React.Component {
                         currently studying
                   </label>
                   </p>
-              <br/>
-            <input type="reset" value="Reset" onClick={this.handleReset}/>
-            <input type="submit" value="Submit" onClick={this.handleSubmit}/>  
+            <Button variant="dark" onClick={this.back}>Back</Button>
+            <Button variant="light" onClick={this.saveAndContinue}>Save and Continue</Button>    
         </form>
     )}
 }
