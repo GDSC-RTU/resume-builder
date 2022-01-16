@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, Col, Container , Row , Form } from 'react-bootstrap';
+import { Button, Col , Row , Form } from 'react-bootstrap';
+import styles from './personaldetails.module.css'
 
 class PersonDetails extends React.Component {
     constructor(props){
@@ -19,9 +20,7 @@ class PersonDetails extends React.Component {
 
     render() {
       return (
-        <Container fluid>
-          <Row>
-          <Col className='w-75'>
+          <div className={styles.entryMain}>
           <Form>
             <div className="m-3 p-3"><h1>Please enter your details</h1>
             Employers will use this information to contact you.</div>
@@ -79,12 +78,7 @@ class PersonDetails extends React.Component {
           </Form.Group>
 
           </Form>
-        </Col>
-        <Col>
-          123
-        </Col>
-        </Row>
-        </Container>
+        </div>
       );
     }
   }

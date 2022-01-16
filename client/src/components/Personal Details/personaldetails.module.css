@@ -1,0 +1,6 @@
+.entryMain{
+    padding: 50px;
+    display: flex;
+    width: 75%;
+    justify-content: center;
+}
