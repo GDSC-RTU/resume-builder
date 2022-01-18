@@ -1,14 +1,11 @@
 import './App.css';
-import personalDetails from './components/personalDetails';
-import Education from './components/education';
-import Experience from './components/experience';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import EntryPage from './components/Entry Page/entryPage';
 
 function App() {
   return (
     <div className="App">
-        {/* <Name/>     */}
-        {/* <Education/> */}
-        <Experience/>
+      <EntryPage></EntryPage>
     </div>
   );
 }
