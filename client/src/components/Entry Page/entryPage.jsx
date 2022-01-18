@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Route, Routes , BrowserRouter } from 'react-router-dom';
+
 import Navbar from '../../uikit/Navbar/Navbar';
 import Education from '../Education/education';
 import Experience from '../Experience/experience'
@@ -7,7 +9,7 @@ import Project from '../Project/Project';
 
 class EntryPage extends Component {
     state = { 
-        step:1,
+        // step:1,
         firstName:'',
         lastName:'', 
         email:'', 
@@ -27,11 +29,9 @@ class EntryPage extends Component {
         isChecked : false
     }
         
-    nextStep = () => {
-        const { step } = this.state;
-        this.setState({
-        step : step + 1
-        })
+    nextStep = (str) => {
+        if(str==='education')
+            console.log('123');
     }
     
     prevStep = () => {
@@ -47,41 +47,19 @@ class EntryPage extends Component {
 
     render() { 
         const { step, firstName, lastName, email, address, dob , country , phoneNo , city, zip ,college_name , city_college, state_college, degree, field_of_study, graduating_year, custom_degree , isChecked} = this.state;
-        const inputValues = {  firstName, lastName, email, address, dob , country , phoneNo , city, zip ,college_name , city_college, state_college, degree, field_of_study, graduating_year, custom_degree , isChecked};
-        
-        switch(step){
-            case 1: 
-                    return <div>
-                    <Navbar
-                    array={["Personal Details > "]}/>
-                    <PersonDetails
-                    nextStep={this.nextStep}
-                    handleChange = {this.handleChange}
-                    inputValues={inputValues}
-                    /></div>
-            case 2:
-                    return <Education
-                    nextStep={this.nextStep}
-                    prevStep={this.prevStep}
-                    handleChange = {this.handleChange}
-                    inputValues={inputValues}
-                    />
-            case 3:
-                    return <Experience
-                    nextStep={this.nextStep}
-                    prevStep={this.prevStep}
-                    handleChange = {this.handleChange}
-                    inputValues={inputValues}
-                    />
-            case 4:
-                    return <Project
-                    prevStep={this.prevStep}
-                    handleChange = {this.handleChange}
-                    inputValues={inputValues}
-                    />
-            default:
-                    return <div>404 Page not Found</div>
-        }
+        const inputValues = {  firstName, lastName, email, address, dob , country , phoneNo , city, zip ,college_name , city_college, state_college, degree, field_of_study, graduating_year, custom_degree , isChecked}; 
+       
+        return(
+        <BrowserRouter>
+            <Navbar array={["Personal Details > "]}/>
+            <Routes>
+                <Route path="/personaldetails" exact element={<PersonDetails nextStep={this.nextStep} handleChange = {this.handleChange} inputValues={inputValues}/>}/>
+                <Route path="/education" exact element={<Education nextStep={this.nextStep} prevStep={this.prevStep} handleChange = {this.handleChange} inputValues={inputValues}/>}/>
+                <Route path="/experience" exact element={<Experience/>} nextStep={this.nextStep}prevStep={this.prevStep} handleChange = {this.handleChange} inputValues={inputValues}/>
+                <Route path="/project" exact element={<Project prevStep={this.prevStep} handleChange = {this.handleChange} binputValues={inputValues}/>}/>
+            </Routes>
+        </BrowserRouter>
+        );
     }
 }
  

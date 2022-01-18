@@ -1,22 +1,18 @@
 import React from 'react';
 import { Button, Col , Row , Form } from 'react-bootstrap';
-import styles from './personaldetails.module.css'
+import styles from './personaldetails.module.css';
+import { Navigate } from 'react-router-dom';
 
 class PersonDetails extends React.Component {
     constructor(props){
     super(props);
     this.state={
-    };
-    }
-    back  = (e) => {
-      e.preventDefault();
-      this.props.prevStep();
-    }
+    };}
 
     saveAndContinue = (e) => {
       console.log(this.props.inputValues)
       e.preventDefault();
-      this.props.nextStep();
+      
     };
 
     render() {
