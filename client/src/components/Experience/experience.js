@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import { Button , Form } from 'react-bootstrap';
 
 class Experience extends React.Component {
     constructor(props) {
@@ -51,27 +51,27 @@ class Experience extends React.Component {
 
     render() { 
         return (
-        <form onSubmit={this.handleSubmit} ref={(el)=> this.myFormRef=el}>
+        <Form onSubmit={this.handleSubmit} ref={(el)=> this.myFormRef=el}>
             <h1>Experience</h1>
-            <label>
+            <Form.Group>
               Employer
-              <input name="employer" value={this.state.employer} placeholder="Ex : Oracle" onChange={this.handleChange}></input>
-            </label>
-            <label>
+              <Form.Control name="employer" value={this.state.employer} placeholder="Ex : Oracle" onChange={this.handleChange}></Form.Control>
+            </Form.Group>
+            <Form.Group>
               Job Title
-              <input name="job_title" value={this.state.job_title} placeholder="Ex : FrontEnd Developer" onChange={this.handleChange}></input>
-            </label>
+              <Form.Control name="job_title" value={this.state.job_title} placeholder="Ex : FrontEnd Developer" onChange={this.handleChange}></Form.Control>
+            </Form.Group>
             <br/>
-            <label>
+            <Form.Group>
               City
-              <input name="city_job" value={this.state.city_job} onChange={this.handleChange}></input>
-            </label>
-            <label>
+              <Form.Control name="city_job" value={this.state.city_job} onChange={this.handleChange}></Form.Control>
+            </Form.Group>
+            <Form.Group>
               State
-              <input name="city_state" value={this.state.city_state} onChange={this.handleChange}></input>
-            </label>
+              <Form.Control name="city_state" value={this.state.city_state} onChange={this.handleChange}></Form.Control>
+            </Form.Group>
             <br/>
-            <label>
+            <Form.Group>
               Start Month
               <select name="start_month" value={this.state.start_month} onChange={this.handleChange}>
                 <option>--Select--</option>
@@ -88,7 +88,7 @@ class Experience extends React.Component {
                 <option value={this.getMonth(10)}>{this.getMonth(10)}</option>
                 <option value={this.getMonth(11)}>{this.getMonth(11)}</option>
               </select>
-            </label>
+            </Form.Group>
             <label>
               Start year
               <select name="start_year" value={this.state.start_year} onChange={this.handleChange}>
@@ -140,14 +140,14 @@ class Experience extends React.Component {
                 </select>
               </label>
                   <p>
-                    <input type="checkbox" name="current_study_check" id="group" checked={this.state.isChecked} onChange={this.toggleChange}/>
+                    <Form.Control type="checkbox" name="current_study_check" id="group" checked={this.state.isChecked} onChange={this.toggleChange}/>
                     <label htmlFor="group"> 
                         currently studying
                   </label>
                   </p>
             <Button variant="dark" onClick={this.back}>Back</Button>
             <Button variant="light" onClick={this.saveAndContinue}>Save and Continue</Button>    
-        </form>
+        </Form>
     )}
 }
  

@@ -14,6 +14,7 @@ class PersonDetails extends React.Component {
     }
 
     saveAndContinue = (e) => {
+      console.log(this.props.inputValues)
       e.preventDefault();
       this.props.nextStep();
     };
@@ -48,7 +49,7 @@ class PersonDetails extends React.Component {
                 </Col>
                 <Col>
                   Zipcode:
-                  <Form.Control type="text" name="zipcode" defaultValue={this.props.inputValues.zipcode} onChange={this.props.handleChange} />
+                  <Form.Control type="text" name="zip" defaultValue={this.props.inputValues.zip} onChange={this.props.handleChange} />
                 </Col>
                 <Col>
                   Country:

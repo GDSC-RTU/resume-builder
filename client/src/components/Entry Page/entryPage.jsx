@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Navbar from '../../uikit/Navbar/Navbar';
 import Education from '../Education/education';
 import Experience from '../Experience/experience'
 import PersonDetails from '../Personal Details/personalDetails';
@@ -11,9 +12,10 @@ class EntryPage extends Component {
         lastName:'', 
         email:'', 
         address:'', 
+        dob:'',
         phoneNo:'',
         city:'', 
-        state:'', 
+        country:'', 
         zip:'',
         college_name : '',
         city_college : '',
@@ -44,16 +46,19 @@ class EntryPage extends Component {
     } 
 
     render() { 
-        const { step, firstName, lastName, email, address, phoneNo , city, state, zip ,college_name , city_college, state_college, degree, field_of_study, graduating_year, custom_degree , isChecked} = this.state;
-        const inputValues = {  firstName, lastName, email, address, phoneNo , city, state, zip ,college_name , city_college, state_college, degree, field_of_study, graduating_year, custom_degree , isChecked};
+        const { step, firstName, lastName, email, address, dob , country , phoneNo , city, zip ,college_name , city_college, state_college, degree, field_of_study, graduating_year, custom_degree , isChecked} = this.state;
+        const inputValues = {  firstName, lastName, email, address, dob , country , phoneNo , city, zip ,college_name , city_college, state_college, degree, field_of_study, graduating_year, custom_degree , isChecked};
         
         switch(step){
             case 1: 
-                    return <PersonDetails
+                    return <div>
+                    <Navbar
+                    array={["Personal Details > "]}/>
+                    <PersonDetails
                     nextStep={this.nextStep}
                     handleChange = {this.handleChange}
                     inputValues={inputValues}
-                    />
+                    /></div>
             case 2:
                     return <Education
                     nextStep={this.nextStep}

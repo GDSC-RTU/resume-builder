@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Row , Col, Container, Form, Dropdown } from 'react-bootstrap';
+import { Button, Row , Col, Container, Form, Dropdown, FormCheck } from 'react-bootstrap';
 
 class Education extends React.Component {
     constructor(props) {
@@ -7,7 +7,8 @@ class Education extends React.Component {
         this.state = {
           degree : "Select A Degree",
           isCustomDegree : false,
-          isChecked : false
+          isChecked : false,
+          year_list: []
         };
       }
     
@@ -24,12 +25,11 @@ class Education extends React.Component {
     getYear(i){
       const d = new Date();
       let year = d.getFullYear();
-      let year_list=[];
 
-      for(let i=0;i<10;i++)
-        year_list.push(year+i);
+      for(let i=0;i<50;i++)
+        this.state.year_list.push(year-i);
 
-      return(year_list[i])
+      return(this.state.year_list[i])
     }
 
     toggleChange(){
@@ -47,7 +47,7 @@ class Education extends React.Component {
     return ( 
       <Container>
         <Form onSubmit={this.handleSubmit} ref={(el) => this.myFormRef = el}>
-            <h1>Experience</h1>
+            <h1>Education</h1>
             <Form.Group>
               <Row>
                 <Col>
@@ -72,7 +72,7 @@ class Education extends React.Component {
                     <Dropdown.Toggle id="dropdown-button-dark-example1" variant="dark">
                       {this.state.degree}
                     </Dropdown.Toggle>  
-                    <Dropdown.Menu name="degree" defaultValue={this.state.degree} onChange={this.handleChange}>
+                    <Dropdown.Menu name="degree" defaultValue={this.state.degree}>
                       <Dropdown.Item  onClick={this.changeDegree} className="High School Diploma-">High School Diploma</Dropdown.Item>
                       <Dropdown.Item  onClick={this.changeDegree} className="GED-">GED</Dropdown.Item>
                       <Dropdown.Item  onClick={this.changeDegree} className="Associate of Arts-" >Associate of Arts</Dropdown.Item>
@@ -97,32 +97,58 @@ class Education extends React.Component {
                 </Col>
               </Row>
             </Form.Group>
-            <label>
-                Field of Study
-                <Form.Control type='text' name="field_of_study" defaultValue={this.state.field_of_study} onChange={this.handleChange}/>
-            </label>
-            <label>
+            <Form.Group>
+              <Row>
+                <Col>
+                  Field of Study
+                  <Form.Control type='text' name="field_of_study" defaultValue={this.state.field_of_study} onChange={this.handleChange}/>
+                </Col>
+                <Col>
                 Graduating Year
-                <select className="graduating_year" defaultValue={this.state.value} onChange={this.handleChange} disabled={this.state.isChecked===true}>
-                  <option defaultValue="">--Select--</option>
-                  <option defaultValue={this.getYear(0)}>{this.getYear(0)}</option>
-                  <option defaultValue={this.getYear(1)}>{this.getYear(1)}</option>
-                  <option defaultValue={this.getYear(2)}>{this.getYear(2)}</option>
-                  <option defaultValue={this.getYear(3)}>{this.getYear(3)}</option>
-                  <option defaultValue={this.getYear(4)}>{this.getYear(4)}</option>
-                  <option defaultValue={this.getYear(5)}>{this.getYear(5)}</option>
-                  <option defaultValue={this.getYear(6)}>{this.getYear(6)}</option>
-                  <option defaultValue={this.getYear(7)}>{this.getYear(7)}</option>
-                  <option defaultValue={this.getYear(8)}>{this.getYear(8)}</option>
-                  <option defaultValue={this.getYear(9)}>{this.getYear(9)}</option>
-                </select>
-                <p>
-                    <Form.Control type="checkbox" name="current_study_check" id="group" checked={this.state.isChecked} onChange={this.toggleChange}/>
-                    <label htmlFor="group">
+                <Dropdown>
+                  <Dropdown.Toggle id="dropdown-button-dark-example1" variant="dark">
+                    {this.state.degree}
+                  </Dropdown.Toggle>
+                <Dropdown.Menu className="graduating_year" defaultValue={this.state.value} onChange={this.handleChange} disabled={this.state.isChecked===true}>
+                  <Dropdown.Item defaultValue="">--Select--</Dropdown.Item>
+                  <Dropdown.Item className={this.getYear(0)}>{this.getYear(0)}</Dropdown.Item>
+                  <Dropdown.Item className={this.getYear(1)}>{this.getYear(1)}</Dropdown.Item>
+                  <Dropdown.Item className={this.getYear(2)}>{this.getYear(2)}</Dropdown.Item>
+                  <Dropdown.Item className={this.getYear(3)}>{this.getYear(3)}</Dropdown.Item>
+                  <Dropdown.Item className={this.getYear(4)}>{this.getYear(4)}</Dropdown.Item>
+                  <Dropdown.Item className={this.getYear(5)}>{this.getYear(5)}</Dropdown.Item>
+                  <Dropdown.Item className={this.getYear(6)}>{this.getYear(6)}</Dropdown.Item>
+                  <Dropdown.Item className={this.getYear(7)}>{this.getYear(7)}</Dropdown.Item>
+                  <Dropdown.Item className={this.getYear(8)}>{this.getYear(8)}</Dropdown.Item>
+                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
+                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
+                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
+                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
+                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
+                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
+                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
+                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
+                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
+                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
+                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
+                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
+                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
+                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
+                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
+                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
+                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
+                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
+                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
+                  
+                </Dropdown.Menu>
+                </Dropdown>
+                </Col>
+                <Col>
+                    <FormCheck name="current_study_check" id="group" checked={this.state.isChecked} onChange={this.toggleChange}/>
                         currently studying
-                    </label>
-                </p>
-            </label>
+                </Col>
+                </Row>
+              </Form.Group>
             <Button variant="dark" onClick={this.back}>Back</Button>
             <Button variant="light" onClick={this.saveAndContinue}>Save and Continue</Button>   
         </Form>
