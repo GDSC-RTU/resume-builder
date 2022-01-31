@@ -1,0 +1,10 @@
+.title{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: aqua;
+    justify-content: center;
+    width: 100%;
+}
+
+.link{
+    text-decoration: none;
+}

@@ -1,7 +1,8 @@
 import React from 'react';
-import { Button, Col , Row , Form } from 'react-bootstrap';
+import { Col , Row , Form } from 'react-bootstrap';
 import styles from './personaldetails.module.css';
-import { Navigate } from 'react-router-dom';
+import Navbar from '../../uikit/Navbar/Navbar';
+import { Link } from 'react-router-dom';
 
 class PersonDetails extends React.Component {
     constructor(props){
@@ -10,14 +11,14 @@ class PersonDetails extends React.Component {
     };}
 
     saveAndContinue = (e) => {
-      console.log(this.props.inputValues)
-      e.preventDefault();
-      
+      console.log(this.props.inputValues)     
     };
 
     render() {
       return (
-          <div className={styles.entryMain}>
+          <div className={styles.container}>
+          <div><Navbar array={["Personal Details > "]}/></div>
+          <div className={styles.main}>
           <Form>
             <div className="m-3 p-3"><h1>Please enter your details</h1>
             Employers will use this information to contact you.</div>
@@ -71,10 +72,11 @@ class PersonDetails extends React.Component {
             </Form.Group>
           
           <Form.Group className='p-3'>
-            <Button variant="light" onClick={this.saveAndContinue}>Save and Continue</Button>
+            <Link className={styles.link} to="/education" onClick={this.saveAndContinue}>Save and Continue</Link>
           </Form.Group>
 
           </Form>
+          </div>
         </div>
       );
     }

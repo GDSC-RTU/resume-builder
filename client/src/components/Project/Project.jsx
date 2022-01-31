@@ -1,6 +1,10 @@
 import React from 'react';
 import ProjectForm from './ProjectForm';
 import ListOfProject from './ListOfProject';
+import { Container , Form } from 'react-bootstrap';
+import Navbar from '../../uikit/Navbar/Navbar';
+import styles from './project.module.css';
+import { Link } from 'react-router-dom';
 
 class Project extends React.Component {
     constructor(props) {
@@ -24,7 +28,10 @@ class Project extends React.Component {
 
     render() { 
         return (
-        <div>
+            <div className={styles.container}>
+            <div><Navbar array={["Personal Details > Education > Experience > Project"]}/></div>
+            <div className={styles.main}>
+            <Container>
             <h1>Project Details</h1>
             {console.log(this.state.List)}
             <ProjectForm
@@ -34,7 +41,13 @@ class Project extends React.Component {
             <ListOfProject
             List={this.state.List}
             deleteProject={this.DeleteFromList}/>
-        </div>
+            </Container>
+            <Form.Group className='m-4'>
+                    <Link className={styles.link} to="/experience">Back</Link>
+                    <Link className={styles.link1} to="/finish" onClick={this.saveAndContinue}>Finish</Link>   
+            </Form.Group>
+            </div>
+            </div>
     )}
 }
  

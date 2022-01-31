@@ -1,5 +1,8 @@
 import React from 'react';
-import { Button, Row , Col, Container, Form, Dropdown, FormCheck } from 'react-bootstrap';
+import { Row , Col, Container, Form, Dropdown } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import Navbar from '../../uikit/Navbar/Navbar';
+import styles from './education.module.css';
 
 class Education extends React.Component {
     constructor(props) {
@@ -11,14 +14,8 @@ class Education extends React.Component {
           year_list: []
         };
       }
-    
-    back  = (e) => {
-      e.preventDefault();
-      this.props.prevStep();
-    }
 
-    saveAndContinue = (e) => {
-      e.preventDefault();
+    saveAndContinue = () => {
       this.props.nextStep();
     };
 
@@ -45,10 +42,13 @@ class Education extends React.Component {
     
     render() { 
     return ( 
+      <div className={styles.container}>
+      <div><Navbar array={["Personal Details > Education >"]}/></div>
+      <div className={styles.main}>
       <Container>
         <Form onSubmit={this.handleSubmit} ref={(el) => this.myFormRef = el}>
             <h1>Education</h1>
-            <Form.Group>
+            <Form.Group className="p-3">
               <Row>
                 <Col>
                   College Name
@@ -60,7 +60,7 @@ class Education extends React.Component {
                 </Col>
               </Row>
             </Form.Group>
-            <Form.Group>
+            <Form.Group className="p-3">
               <Row>
                 <Col>
                   State
@@ -97,7 +97,7 @@ class Education extends React.Component {
                 </Col>
               </Row>
             </Form.Group>
-            <Form.Group>
+            <Form.Group className="p-3">
               <Row>
                 <Col>
                   Field of Study
@@ -138,21 +138,23 @@ class Education extends React.Component {
                   <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
                   <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
                   <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
-                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
-                  
+                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>            
                 </Dropdown.Menu>
                 </Dropdown>
                 </Col>
                 <Col>
-                    <FormCheck name="current_study_check" id="group" checked={this.state.isChecked} onChange={this.toggleChange}/>
-                        currently studying
+                  <Form.Check type='checkbox' id={`default-checkbox`} value={this.props.isChecked} label={`currently studying`} onClick={()=>this.toggleChange()}/>
                 </Col>
                 </Row>
               </Form.Group>
-            <Button variant="dark" onClick={this.back}>Back</Button>
-            <Button variant="light" onClick={this.saveAndContinue}>Save and Continue</Button>   
+            <Form.Group className='m-5'>
+              <Link className={styles.link} to="/personaldetails">Back</Link>
+              <Link className={styles.link1} to="/experience" onClick={this.saveAndContinue}>Save and Continue</Link>   
+            </Form.Group>
         </Form>
         </Container>
+        </div>
+        </div>
     );
     }
 }

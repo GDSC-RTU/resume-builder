@@ -1,0 +1,48 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main{
+    padding: 50px;
+    width: 60%;
+}
+
+.link{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.link1{
+    margin: 10px;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.link:hover{
+    background-color: rgba(10, 9, 9, 0.76);
+    color: white;
+}
+
+.link1:hover{
+    background-color: rgba(10, 9, 9, 0.76);
+    color: white;
+}
+
+.project{
+    overflow-wrap: break-word;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+.span{
+    font-size: 20px;
+    font-weight: bold;
+}
