@@ -1,8 +1,6 @@
 import React from 'react';
 import {v4 as uuid} from 'uuid';
 import { Button , Form, Row , Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import styles from './project.module.css';
 
 class ProjectForm extends React.Component {
     constructor(props) {

@@ -22,7 +22,7 @@ class EntryPage extends Component {
         state_college : '',
         degree : '',
         field_of_study : '',
-        graduating_year : '',
+        graduating_year : '2022',
         custom_degree: '',
         isChecked : false
     }

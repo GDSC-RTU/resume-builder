@@ -107,7 +107,7 @@ class Education extends React.Component {
                 Graduating Year
                 <Dropdown>
                   <Dropdown.Toggle id="dropdown-button-dark-example1" variant="dark">
-                    {this.state.degree}
+                    {this.state.graduating_year}
                   </Dropdown.Toggle>
                 <Dropdown.Menu className="graduating_year" defaultValue={this.state.value} onChange={this.handleChange} disabled={this.state.isChecked===true}>
                   <Dropdown.Item defaultValue="">--Select--</Dropdown.Item>
