@@ -16,8 +16,9 @@ class PersonDetails extends React.Component {
 
     render() {
       return (
-          <div className={styles.container}>
+        <>
           <div><Navbar array={["Personal Details > "]}/></div>
+          <div className={styles.container}>        
           <div className={styles.main}>
           <Form>
             <div className="m-3 p-3"><h1>Please enter your details</h1>
@@ -74,10 +75,12 @@ class PersonDetails extends React.Component {
           <Form.Group className='p-3'>
             <Link className={styles.link} to="/education" onClick={this.saveAndContinue}>Save and Continue</Link>
           </Form.Group>
-
           </Form>
+          
           </div>
+          <div>1213121312131213121312131213121312131213121312131213121312131213121312131213</div>
         </div>
+        </>
       );
     }
   }

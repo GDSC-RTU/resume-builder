@@ -19,10 +19,6 @@ class Experience extends React.Component {
             isChecked: false
         };
       }
-  
-      saveAndContinue = (e) => {
-        this.props.nextStep();
-      };
 
       getMonth=(i)=>{
         const months=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -60,8 +56,9 @@ class Experience extends React.Component {
 
     render() { 
       return (
-      <div className={styles.container}>
+      <>
       <div><Navbar array={["Personal Details > Education > Experience"]}/></div>
+      <div className={styles.container}>
       <div className={styles.main}>
       <Container>
         <Form onSubmit={this.handleSubmit} ref={(el)=> this.myFormRef=el}>
@@ -70,11 +67,11 @@ class Experience extends React.Component {
               <Row>
               <Col>
               Employer
-              <Form.Control name="employer" value={this.state.employer} placeholder="Ex : Oracle" onChange={this.handleChange}></Form.Control>
+              <Form.Control name="employer" defaultValue={this.state.employer} placeholder="Ex : Oracle" onChange={this.handleChange}></Form.Control>
               </Col>
               <Col>
               Job Title
-              <Form.Control name="job_title" value={this.state.job_title} placeholder="Ex : FrontEnd Developer" onChange={this.handleChange}></Form.Control>
+              <Form.Control name="job_title" defaultValue={this.state.job_title} placeholder="Ex : FrontEnd Developer" onChange={this.handleChange}></Form.Control>
               </Col>
               </Row>
             </Form.Group>
@@ -82,11 +79,11 @@ class Experience extends React.Component {
             <Row>
               <Col>
               City
-              <Form.Control name="city_job" value={this.state.city_job} onChange={this.handleChange}></Form.Control>
+              <Form.Control name="city_job" defaultValue={this.state.city_job} onChange={this.handleChange}></Form.Control>
               </Col>
               <Col>
               State
-              <Form.Control name="city_state" value={this.state.city_state} onChange={this.handleChange}></Form.Control>
+              <Form.Control name="city_state" defaultValue={this.state.city_state} onChange={this.handleChange}></Form.Control>
               </Col>
             </Row>
             </Form.Group>
@@ -214,6 +211,7 @@ class Experience extends React.Component {
         </Container>
         </div>
         </div>
+        </>
     )}
 }
  

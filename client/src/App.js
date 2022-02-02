@@ -1,6 +1,6 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import EntryPage from './components/Entry Page/entryPage';
+import EntryPage from './components/Path routing/entryPage';
 
 function App() {
   return (

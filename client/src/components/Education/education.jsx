@@ -39,11 +39,16 @@ class Education extends React.Component {
       this.setState({degree : event.target.className.split('-')[0]});
       console.log(this.state.degree)
     }
+
+    changeYear=(i)=>{
+      this.setState({graduating_year : i});
+    }
     
     render() { 
     return ( 
-      <div className={styles.container}>
+      <>
       <div><Navbar array={["Personal Details > Education >"]}/></div>
+      <div className={styles.container}>
       <div className={styles.main}>
       <Container>
         <Form onSubmit={this.handleSubmit} ref={(el) => this.myFormRef = el}>
@@ -109,36 +114,36 @@ class Education extends React.Component {
                   <Dropdown.Toggle id="dropdown-button-dark-example1" variant="dark">
                     {this.state.graduating_year}
                   </Dropdown.Toggle>
-                <Dropdown.Menu className="graduating_year" defaultValue={this.state.value} onChange={this.handleChange} disabled={this.state.isChecked===true}>
+                <Dropdown.Menu className="graduating_year" disabled={this.state.isChecked===true}>
                   <Dropdown.Item defaultValue="">--Select--</Dropdown.Item>
-                  <Dropdown.Item className={this.getYear(0)}>{this.getYear(0)}</Dropdown.Item>
-                  <Dropdown.Item className={this.getYear(1)}>{this.getYear(1)}</Dropdown.Item>
-                  <Dropdown.Item className={this.getYear(2)}>{this.getYear(2)}</Dropdown.Item>
-                  <Dropdown.Item className={this.getYear(3)}>{this.getYear(3)}</Dropdown.Item>
-                  <Dropdown.Item className={this.getYear(4)}>{this.getYear(4)}</Dropdown.Item>
-                  <Dropdown.Item className={this.getYear(5)}>{this.getYear(5)}</Dropdown.Item>
-                  <Dropdown.Item className={this.getYear(6)}>{this.getYear(6)}</Dropdown.Item>
-                  <Dropdown.Item className={this.getYear(7)}>{this.getYear(7)}</Dropdown.Item>
-                  <Dropdown.Item className={this.getYear(8)}>{this.getYear(8)}</Dropdown.Item>
-                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
-                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
-                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
-                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
-                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
-                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
-                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
-                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
-                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
-                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
-                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
-                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
-                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
-                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
-                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
-                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
-                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
-                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>
-                  <Dropdown.Item className={this.getYear(9)}>{this.getYear(9)}</Dropdown.Item>            
+                  <Dropdown.Item onClick={()=>this.changeYear(this.getYear(0))}>{this.getYear(0)}</Dropdown.Item>
+                  <Dropdown.Item onClick={()=>this.changeYear(this.getYear(1))}>{this.getYear(1)}</Dropdown.Item>
+                  <Dropdown.Item onClick={()=>this.changeYear(this.getYear(2))}>{this.getYear(2)}</Dropdown.Item>
+                  <Dropdown.Item onClick={()=>this.changeYear(this.getYear(3))}>{this.getYear(3)}</Dropdown.Item>
+                  <Dropdown.Item onClick={()=>this.changeYear(this.getYear(4))}>{this.getYear(4)}</Dropdown.Item>
+                  <Dropdown.Item onClick={()=>this.changeYear(this.getYear(5))}>{this.getYear(5)}</Dropdown.Item>
+                  <Dropdown.Item onClick={()=>this.changeYear(this.getYear(6))}>{this.getYear(6)}</Dropdown.Item>
+                  <Dropdown.Item onClick={()=>this.changeYear(this.getYear(7))}>{this.getYear(7)}</Dropdown.Item>
+                  <Dropdown.Item onClick={()=>this.changeYear(this.getYear(8))}>{this.getYear(8)}</Dropdown.Item>
+                  <Dropdown.Item onClick={()=>this.changeYear(this.getYear(9))}>{this.getYear(9)}</Dropdown.Item>
+                  <Dropdown.Item onClick={()=>this.changeYear(this.getYear(10))}>{this.getYear(10)}</Dropdown.Item>
+                  <Dropdown.Item onClick={()=>this.changeYear(this.getYear(11))}>{this.getYear(11)}</Dropdown.Item>
+                  <Dropdown.Item onClick={()=>this.changeYear(this.getYear(12))}>{this.getYear(12)}</Dropdown.Item>
+                  <Dropdown.Item onClick={()=>this.changeYear(this.getYear(13))}>{this.getYear(13)}</Dropdown.Item>
+                  <Dropdown.Item onClick={()=>this.changeYear(this.getYear(14))}>{this.getYear(14)}</Dropdown.Item>
+                  <Dropdown.Item onClick={()=>this.changeYear(this.getYear(15))}>{this.getYear(15)}</Dropdown.Item>
+                  <Dropdown.Item onClick={()=>this.changeYear(this.getYear(16))}>{this.getYear(16)}</Dropdown.Item>
+                  <Dropdown.Item onClick={()=>this.changeYear(this.getYear(17))}>{this.getYear(17)}</Dropdown.Item>
+                  <Dropdown.Item onClick={()=>this.changeYear(this.getYear(18))}>{this.getYear(18)}</Dropdown.Item>
+                  <Dropdown.Item onClick={()=>this.changeYear(this.getYear(19))}>{this.getYear(19)}</Dropdown.Item>
+                  <Dropdown.Item onClick={()=>this.changeYear(this.getYear(20))}>{this.getYear(20)}</Dropdown.Item>
+                  <Dropdown.Item onClick={()=>this.changeYear(this.getYear(21))}>{this.getYear(21)}</Dropdown.Item>
+                  <Dropdown.Item onClick={()=>this.changeYear(this.getYear(22))}>{this.getYear(22)}</Dropdown.Item>
+                  <Dropdown.Item onClick={()=>this.changeYear(this.getYear(23))}>{this.getYear(23)}</Dropdown.Item>
+                  <Dropdown.Item onClick={()=>this.changeYear(this.getYear(24))}>{this.getYear(24)}</Dropdown.Item>
+                  <Dropdown.Item onClick={()=>this.changeYear(this.getYear(25))}>{this.getYear(25)}</Dropdown.Item>
+                  <Dropdown.Item onClick={()=>this.changeYear(this.getYear(26))}>{this.getYear(26)}</Dropdown.Item>
+                  <Dropdown.Item onClick={()=>this.changeYear(this.getYear(27))}>{this.getYear(27)}</Dropdown.Item>            
                 </Dropdown.Menu>
                 </Dropdown>
                 </Col>
@@ -155,6 +160,7 @@ class Education extends React.Component {
         </Container>
         </div>
         </div>
+        </>
     );
     }
 }
