@@ -10,10 +10,15 @@ class Project extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            List : []
+            List : [],
         };
         this.AddToList = this.AddToList.bind(this);
         this.DeleteFromList = this.DeleteFromList.bind(this);
+    }
+
+    saveAndContinue=()=>{
+        const obj = { list : this.state.List };
+        this.props.projectDataUpdate(obj);
     }
 
     AddToList(data){
@@ -35,7 +40,8 @@ class Project extends React.Component {
             <h1>Project Details</h1>
             {console.log(this.state.List)}
             <ProjectForm
-            List={this.List}
+            List={this.state.List}
+            inputValues={this.inputValues}
             sendData={this.AddToList}
             />
             <ListOfProject

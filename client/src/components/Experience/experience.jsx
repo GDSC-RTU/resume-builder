@@ -8,18 +8,22 @@ class Experience extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            employer : '',
-            job_title : '',
-            city_job : '',
-            city_state : '',
-            start_month : '',
-            start_year : '',
-            end_month : '',
-            end_year: '',
-            isChecked: false
+          employer : 'Oracle',
+          job_title : 'Frontend Intern',
+          city_job : 'Bangalore',
+          city_state : 'Karnataka',
+          start_month : 'January',
+          start_year : '2021',
+          end_month : 'February',
+          end_year: '2022',
+          isCheckedExperience: false,
         };
       }
 
+      saveAndContinue=()=>{
+          const obj={ employer : this.state.employer,job_title : this.state.job_title,city_job : this.state.city_job,city_state : this.state.city_state,start_month : this.state.start_month,start_year : this.state.start_year,end_month : this.state.end_month,end_year: this.state.end_year,isCheckedExperience : this.state.isCheckedExperience }
+          this.props.experienceDataUpdate(obj);
+      }
       getMonth=(i)=>{
         const months=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         return months[i];
@@ -30,6 +34,10 @@ class Experience extends React.Component {
         let year = d.getFullYear();
       
         return(year+i)
+      }
+
+      handleChange = (event) => {
+        this.setState({[event.target.name]: event.target.value})
       }
 
       changeFunction(i){

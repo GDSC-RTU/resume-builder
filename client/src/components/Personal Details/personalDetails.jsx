@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col , Row , Form } from 'react-bootstrap';
+import { Col ,Row , Form } from 'react-bootstrap';
 import styles from './personaldetails.module.css';
 import Navbar from '../../uikit/Navbar/Navbar';
 import { Link } from 'react-router-dom';
@@ -8,13 +8,28 @@ class PersonDetails extends React.Component {
     constructor(props){
     super(props);
     this.state={
+      firstName:'FirstName',
+      lastName:'LastName',
+      address:'Generic Address',
+      city:'City',
+      country:'Country', 
+      zip:'123123',
+      dob:'01-01-2001',
+      phoneNo:'1231231231',
+      email:'123@email.com'
     };}
 
-    saveAndContinue = (e) => {
-      console.log(this.props.inputValues)     
+    saveAndContinue = () => {
+      const obj={ firstName : this.state.firstName, lastName : this.state.lastName, address : this.state.address, city : this.state.city,country : this.state.country,zip : this.state.zip,dob : this.state.dob,phoneNo : this.state.phoneNo,email : this.state.email}
+      this.props.personalDataUpdate(obj);     
     };
 
+    handleChange = (event) => {
+      this.setState({[event.target.name]: event.target.value})
+    }
+
     render() {
+
       return (
         <>
           <div><Navbar array={["Personal Details > "]}/></div>
@@ -27,31 +42,31 @@ class PersonDetails extends React.Component {
               <Row >
                 <Col>
                   First Name:
-                  <Form.Control type="text" name="firstName" defaultValue={this.props.inputValues.firstName} required onChange={this.props.handleChange} />
+                  <Form.Control type="text" name="firstName" defaultValue={this.state.firstName} required onChange={this.handleChange} />
                 </Col>
                 <Col>
                   Last Name:
-                  <Form.Control type="text" name="lastName" defaultValue={this.props.inputValues.lastName} onChange={this.props.handleChange} />
+                  <Form.Control type="text" name="lastName" defaultValue={this.state.lastName} onChange={this.handleChange} />
                 </Col>
               </Row>
             </Form.Group>           
             <Form.Group className="p-3">
               Address
-              <Form.Control type="text" name="address" defaultValue={this.props.inputValues.address} onChange={this.props.handleChange} />
+              <Form.Control type="text" name="address" defaultValue={this.state.address} onChange={this.handleChange} />
             </Form.Group>
             <Form.Group className="p-3">
               <Row>
                 <Col>
                   City:
-                  <Form.Control type="text" name="city" defaultValue={this.props.inputValues.city} onChange={this.props.handleChange} />
+                  <Form.Control type="text" name="city" defaultValue={this.state.city} onChange={this.handleChange} />
                 </Col>
                 <Col>
                   Zipcode:
-                  <Form.Control type="text" name="zip" defaultValue={this.props.inputValues.zip} onChange={this.props.handleChange} />
+                  <Form.Control type="text" name="zip" defaultValue={this.state.zip} onChange={this.handleChange} />
                 </Col>
                 <Col>
                   Country:
-                  <Form.Control type="text" name="country" defaultValue={this.props.inputValues.country} onChange={this.props.handleChange} />
+                  <Form.Control type="text" name="country" defaultValue={this.state.country} onChange={this.handleChange} />
                 </Col>
               </Row>
             </Form.Group>
@@ -59,15 +74,15 @@ class PersonDetails extends React.Component {
               <Row>
                 <Col>
                   Date of Birth:
-                  <Form.Control type="date" name="dob" defaultValue={this.props.inputValues.dob} onChange={this.props.handleChange} />
+                  <Form.Control type="date" name="dob" defaultValue={this.state.dob} onChange={this.handleChange} />
                 </Col>
                 <Col>
                   Email ID:
-                  <Form.Control type="email" name="email" defaultValue={this.props.inputValues.email} onChange={this.props.handleChange} />
+                  <Form.Control type="email" name="email" defaultValue={this.state.email} onChange={this.handleChange} />
                 </Col>
                 <Col>
                   Phone Number:
-                  <Form.Control type="tel" name="phoneNo" pattern="[+]{1}[0-9]{2}-[0-9]{10}" placeholder=' Eg +91-834532XXXXX' defaultValue={this.props.inputValues.phoneNo} onChange={this.props.handleChange} />
+                  <Form.Control type="tel" name="phoneNo" pattern="[+]{1}[0-9]{2}-[0-9]{10}" placeholder=' Eg +91-834532XXXXX' defaultValue={this.state.phoneNo} onChange={this.handleChange} />
                 </Col>
               </Row>
             </Form.Group>

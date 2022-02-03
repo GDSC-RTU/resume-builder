@@ -10,7 +10,7 @@
 ---------------------------------------------------------------------------------
 */
 
-
+.download { display: flex;justify-content: center; }
 .msg { padding: 10px; background: #222; position: relative; }
 .msg h1 { color: #fff;  }
 .msg a { margin-left: 20px; background: #408814; color: white; padding: 4px 8px; text-decoration: none; }
@@ -22,9 +22,11 @@ body { font-family: Georgia; color: #444; }
 .yui-gf { margin-bottom: 2em; padding-bottom: 2em; border-bottom: 1px solid #ccc; }
 
 /* //-- header, body, footer -- */
-#hd { margin: 2.5em 0 3em 0; padding-bottom: 1.5em; border-bottom: 1px solid #ccc }
+#hd { margin: 2.5em 0 3em 0; padding-bottom: 1.5em; border-bottom: 1px solid #ccc;display: flex;justify-content: space-between; }
+.address{width: 30%;word-break: break-all;}
 #hd h2 { text-transform: uppercase; letter-spacing: 2px; }
 #bd, #ft { margin-bottom: 2em; }
+#about-me{ margin-bottom: 2em; border-bottom: 1px solid #ccc; padding-bottom: 1.5em; }
 
 /* //-- footer -- */
 #ft { padding: 1em 0 5em 0; font-size: 92%; border-top: 1px solid #ccc; text-align: center; }
@@ -68,7 +70,8 @@ a#pdf:hover { background: #222; }
 #srt-ttab img.last { margin-top: 20px }
 
 /* --// override to force 1/8th width grids -- */
-.yui-gf .yui-u{width:80.2%;}
+.project-width{width: 33%;}
+.yui-gf .yui-u{width:80.2%;display: flex;}
+.education{display:flex;flex-direction: column}
 .yui-gf div.first{width:12.3%;}
-
-
+.gpa{display: flex;align-content: space-between;}

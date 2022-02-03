@@ -8,34 +8,36 @@ class Education extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+          year_list : [],
+          college_name : 'MSRIT',
+          city_college : 'Bangalore',
+          state_college : 'Karnataka',
+          field_of_study : 'ISE',
+          graduating_year : '2022',
+          custom_degree: 'B.Tech',
           degree : "Select A Degree",
           isCustomDegree : false,
-          isChecked : false,
-          year_list: []
+          currently_studying : false
         };
       }
 
-    saveAndContinue = () => {
-      this.props.nextStep();
+    handleChange = (event) => {
+        this.setState({[event.target.name]: event.target.value})
+    }
+
+    saveAndContinue=()=>{
+      if( this.state.degree==='Custom Degree' )
+      {
+        const obj={ college_name : this.state.college_name,city_college : this.state.city_college,state_college : this.state.state_college,field_of_study : this.state.field_of_study, graduating_year : this.state.graduating_year , degree : this.state.custom_degree , currently_studying : this.state.currently_studying}
+        this.props.educationDataUpdate(obj);
+      }
+      else{
+        const obj={ college_name : this.state.college_name,city_college : this.state.city_college,state_college : this.state.state_college,field_of_study : this.state.field_of_study, graduating_year : this.state.graduating_year , degree : this.state.degree}
+        this.props.educationDataUpdate(obj);
+      }
     };
 
-    getYear(i){
-      const d = new Date();
-      let year = d.getFullYear();
-
-      for(let i=0;i<50;i++)
-        this.state.year_list.push(year-i);
-
-      return(this.state.year_list[i])
-    }
-
-    toggleChange(){
-      this.setState({
-        isChecked: !this.state.isChecked
-      })
-    }
-
-    changeDegree=(event)=>{
+    changeDegree = (event) => {
       this.setState({degree : event.target.className.split('-')[0]});
       console.log(this.state.degree)
     }
@@ -43,15 +45,25 @@ class Education extends React.Component {
     changeYear=(i)=>{
       this.setState({graduating_year : i});
     }
+
+    getYear(i){
+      return(this.state.year_list[i])
+    }
     
     render() { 
+      const d = new Date();
+      let year = d.getFullYear();
+
+      for(let i=0;i<50;i++)
+        this.state.year_list.push(year-i);
+    
     return ( 
       <>
       <div><Navbar array={["Personal Details > Education >"]}/></div>
       <div className={styles.container}>
       <div className={styles.main}>
       <Container>
-        <Form onSubmit={this.handleSubmit} ref={(el) => this.myFormRef = el}>
+        <Form>
             <h1>Education</h1>
             <Form.Group className="p-3">
               <Row>
@@ -114,7 +126,7 @@ class Education extends React.Component {
                   <Dropdown.Toggle id="dropdown-button-dark-example1" variant="dark">
                     {this.state.graduating_year}
                   </Dropdown.Toggle>
-                <Dropdown.Menu className="graduating_year" disabled={this.state.isChecked===true}>
+                <Dropdown.Menu className="graduating_year" disabled={this.state.isCheckedDegree===true}>
                   <Dropdown.Item defaultValue="">--Select--</Dropdown.Item>
                   <Dropdown.Item onClick={()=>this.changeYear(this.getYear(0))}>{this.getYear(0)}</Dropdown.Item>
                   <Dropdown.Item onClick={()=>this.changeYear(this.getYear(1))}>{this.getYear(1)}</Dropdown.Item>
@@ -148,7 +160,7 @@ class Education extends React.Component {
                 </Dropdown>
                 </Col>
                 <Col>
-                  <Form.Check type='checkbox' id={`default-checkbox`} value={this.props.isChecked} label={`currently studying`} onClick={()=>this.toggleChange()}/>
+                  <Form.Check type='checkbox' id={`default-checkbox`} value={this.state.currently_studying} label={`currently studying`} onClick={()=>this.toggleChange()}/>
                 </Col>
                 </Row>
               </Form.Group>
