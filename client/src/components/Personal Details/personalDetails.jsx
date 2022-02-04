@@ -10,7 +10,7 @@ class PersonDetails extends React.Component {
     this.state={
       firstName:'FirstName',
       lastName:'LastName',
-      address:'Generic Address',
+      address:'#213,4th cross,6th block,MG road',
       city:'City',
       country:'Country', 
       zip:'123123',
@@ -31,6 +31,7 @@ class PersonDetails extends React.Component {
 
     render() {
 
+      const picture_sample='https://thumbs.dreamstime.com/b/personal-info-icon-vector-illustration-isolated-flat-cartoon-line-outline-design-user-profile-card-details-symbol-style-my-106255173.jpg'
       return (
         <>
           <div><Navbar array={["Personal Details > "]}/></div>
@@ -94,7 +95,7 @@ class PersonDetails extends React.Component {
           </Form>
           
           </div>
-          <div>1213121312131213121312131213121312131213121312131213121312131213121312131213</div>
+          <div className={styles.img}><img src={picture_sample} alt="sample resume" width='400' height='400' /></div>
         </div>
         </>
       );

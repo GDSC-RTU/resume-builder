@@ -28,7 +28,7 @@ export class Template extends Component{
 				</div>
 			</div>
 			<div className='address'>
-				<h3>Address : </h3>{personalDetailsValues.address}r518gvb87r518gvb87r518gvb87r518gvb87r518gvb87r518gvb87r518gvb87r518gvb87r518gvb87r518gvb87<br/>{personalDetailsValues.city}&nbsp;&nbsp;{personalDetailsValues.country}
+				<h3>Address : </h3>{personalDetailsValues.address}<br/>{personalDetailsValues.city}&nbsp;&nbsp;{personalDetailsValues.country}
 			</div>
 		</div>
 
@@ -105,7 +105,7 @@ export class Template extends Component{
 								<h2>{experienceDetailsValues.employer}</h2>
 								<h3>{experienceDetailsValues.job_title}</h3>
 								<h4>{experienceDetailsValues.start_month}&nbsp;{experienceDetailsValues.start_year} - {experienceDetailsValues.isCheckedExperience? <>Present</>:<>{experienceDetailsValues.end_month} {experienceDetailsValues.end_year}</>}</h4>
-								<p>Intrinsicly enable optimal core competencies through corporate relationships. Phosfluorescently implement worldwide vortals and client-focused imperatives. Conveniently initiate virtual paradigms and top-line convergence. </p>
+								<p>Intrinsicly enable optimal core competencies through corporate relationships. Conveniently initiate virtual paradigms and top-line convergence. </p>
 							</div>
 						</div>
 					</div>

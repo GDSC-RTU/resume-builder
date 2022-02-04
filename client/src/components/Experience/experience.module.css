@@ -1,14 +1,20 @@
 .container{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
+    padding-top: 2em;
 }
 
 .main{
-    padding: 50px;
     width: 60%;
 }
 
+.img{
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    width: 30%;
+}
 .link{
     background-color: black;
     color: white;

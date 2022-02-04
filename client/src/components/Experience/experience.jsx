@@ -64,9 +64,12 @@ class Experience extends React.Component {
       }
 
     render() { 
+
+      const picture_sample='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQiF_UyoGFE_r8DGIhomQZ32vgQldD5gtYlw&usqp=CAU'
+
       return (
       <>
-      <div><Navbar array={["Personal Details > Education > Experience"]}/></div>
+      <div><Navbar array={["Personal Details >"," Education >"," Experience >"]}/></div>
       <div className={styles.container}>
       <div className={styles.main}>
       <Container>
@@ -219,6 +222,7 @@ class Experience extends React.Component {
         </Form>
         </Container>
         </div>
+        <div className={styles.img}><img src={picture_sample} alt="sample resume" width='200' height='200' /></div>
         </div>
         </>
     )}

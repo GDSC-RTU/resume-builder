@@ -1,10 +1,53 @@
+.container{
+    background-color: #e5e5e5;
+    height: 100%;
+    overflow-y: scroll;
+    padding-bottom: 3em;
+}
+
 .title{
     font-family: Arial, Helvetica, sans-serif;
-    background-color: aqua;
+    display: flex;
     justify-content: center;
-    width: 100%;
+}
+
+img{
+    border-radius: 8px;
+}
+
+.question{
+    padding: 3em;
+}
+
+.answer{
+    display: flex;
+    padding: 0em 5em 5em 5em;
+}
+
+.text{
+    width: 60%;
+    color: rgba(0, 0, 0, 0.76);
+}
+
+.img{
+    width: 40%;
+    display: flex;
+    justify-content: center;
 }
 
 .link{
     text-decoration: none;
+    border-radius: 8px;
+    padding: 5px;
+    background-color: rgb(17, 248, 48);
+    color: #fff;
 }
+
+.link:hover{
+    color: lightgray;
+}
+
+.createButton{
+    display: flex;
+    justify-content: center;
+ }

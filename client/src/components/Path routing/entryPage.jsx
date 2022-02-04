@@ -17,29 +17,21 @@ class EntryPage extends Component {
 
     personalData=(data)=>{
         this.setState({personalDetailsValues : data });
-        console.log(data);
     }    
 
     educationData=(data)=>{
         this.setState({educationDetailsValues : data });
-        console.log(data);
     }  
 
     experienceData=(data)=>{
         this.setState({experienceDetailsValues : data });
-        console.log(data);
     }  
 
     projectData=(data)=>{
         this.setState({projectDetailsValues : data });
-        console.log(data);
     }  
 
     render() { 
-        const personalDetailsValues = this.state.personalDetailsValues;
-        const educationDetailsValues = this.state.educationDetailsValues;
-        const experienceDetailsValues = this.state.experienceDetailsValues;
-        const projectDetailsValues = this.state.projectDetailsValues;
 
         return(
         <BrowserRouter>

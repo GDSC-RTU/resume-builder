@@ -5,10 +5,14 @@
 }
 
 .main{
-    padding: 50px;
     width: 60%;
 }
 
+.img{
+    display: flex;
+    justify-content: center;
+    width: 30%;
+}
 .link{
     background-color: black;
     color: white;
