@@ -8,7 +8,7 @@ function Navbar({array}){
     <div>
         <div className={styles.navbar}>
         <Link className={styles.link} to="/"><div className={styles.menu}>Resume Builder</div></Link>
-        <div><BreadCrumb
+        <div className={styles.breadcrumb}><BreadCrumb
         array={array}/></div>
         </div>
     </div>

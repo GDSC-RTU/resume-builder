@@ -21,7 +21,8 @@ class PersonDetails extends React.Component {
 
     saveAndContinue = () => {
       const obj={ firstName : this.state.firstName, lastName : this.state.lastName, address : this.state.address, city : this.state.city,country : this.state.country,zip : this.state.zip,dob : this.state.dob,phoneNo : this.state.phoneNo,email : this.state.email}
-      this.props.personalDataUpdate(obj);     
+      this.props.personalDataUpdate(obj); 
+      sessionStorage.setItem('personal' , JSON.stringify(obj) );    
     };
 
     handleChange = (event) => {

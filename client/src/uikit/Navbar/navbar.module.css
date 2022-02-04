@@ -16,6 +16,10 @@
     padding: 5px;
 }
 
+.breadcrumb{
+    display: flex;
+}
+
 .link{
     background-color: black;
     color: white;

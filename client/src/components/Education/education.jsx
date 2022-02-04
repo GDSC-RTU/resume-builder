@@ -30,10 +30,12 @@ class Education extends React.Component {
       {
         const obj={ college_name : this.state.college_name,city_college : this.state.city_college,state_college : this.state.state_college,field_of_study : this.state.field_of_study, graduating_year : this.state.graduating_year , degree : this.state.custom_degree , currently_studying : this.state.currently_studying}
         this.props.educationDataUpdate(obj);
+        sessionStorage.setItem('personal' , JSON.stringify(obj) );
       }
       else{
         const obj={ college_name : this.state.college_name,city_college : this.state.city_college,state_college : this.state.state_college,field_of_study : this.state.field_of_study, graduating_year : this.state.graduating_year , degree : this.state.degree}
         this.props.educationDataUpdate(obj);
+        sessionStorage.setItem('education' , JSON.stringify(obj) );
       }
     };
 
@@ -59,7 +61,7 @@ class Education extends React.Component {
     
     return ( 
       <>
-      <div><Navbar array={["Personal Details > Education >"]}/></div>
+      <div><Navbar array={["Personal Details >"," Education >"]}/></div>
       <div className={styles.container}>
       <div className={styles.main}>
       <Container>

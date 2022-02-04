@@ -19,6 +19,8 @@ class Project extends React.Component {
     saveAndContinue=()=>{
         const obj = { list : this.state.List };
         this.props.projectDataUpdate(obj);
+        sessionStorage.setItem('project' , JSON.stringify(obj) );
+        console.log(sessionStorage.getItem('project'));
     }
 
     AddToList(data){

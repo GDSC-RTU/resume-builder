@@ -23,6 +23,7 @@ class Experience extends React.Component {
       saveAndContinue=()=>{
           const obj={ employer : this.state.employer,job_title : this.state.job_title,city_job : this.state.city_job,city_state : this.state.city_state,start_month : this.state.start_month,start_year : this.state.start_year,end_month : this.state.end_month,end_year: this.state.end_year,isCheckedExperience : this.state.isCheckedExperience }
           this.props.experienceDataUpdate(obj);
+          sessionStorage.setItem('experience' , JSON.stringify(obj) );
       }
       getMonth=(i)=>{
         const months=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];

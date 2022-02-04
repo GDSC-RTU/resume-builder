@@ -49,7 +49,7 @@ class EntryPage extends Component {
                 <Route path="/education" exact element={<Education educationDataUpdate={this.educationData}/>}/>
                 <Route path="/experience" exact element={<Experience experienceDataUpdate={this.experienceData}/>}/>
                 <Route path="/project" exact element={<Project projectDataUpdate={this.projectData}/>}/>
-                <Route path="/finish" exact element={<Srtresume personalDetailsValues={personalDetailsValues} educationDetailsValues={educationDetailsValues} experienceDetailsValues={experienceDetailsValues} projectDetailsValues={projectDetailsValues}/>}/>
+                <Route path="/finish" exact element={<Srtresume />}/>
             </Routes>
         </BrowserRouter>
         );
