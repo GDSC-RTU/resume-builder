@@ -8,21 +8,22 @@ class PersonDetails extends React.Component {
     constructor(props){
     super(props);
     this.state={
-      firstName:'FirstName',
-      lastName:'LastName',
-      address:'#213,4th cross,6th block,MG road',
-      city:'City',
-      country:'Country', 
-      zip:'123123',
-      dob:'01-01-2001',
-      phoneNo:'1231231231',
-      email:'123@email.com'
+      firstName:'',
+      lastName:'',
+      address:'',
+      city:'',
+      country:'', 
+      zip:'',
+      dob:'',
+      phoneNo:'',
+      email:'',
+      description:''
     };}
 
     saveAndContinue = () => {
-      const obj={ firstName : this.state.firstName, lastName : this.state.lastName, address : this.state.address, city : this.state.city,country : this.state.country,zip : this.state.zip,dob : this.state.dob,phoneNo : this.state.phoneNo,email : this.state.email}
+      const obj={ firstName : this.state.firstName, lastName : this.state.lastName, address : this.state.address, city : this.state.city,country : this.state.country,zip : this.state.zip,dob : this.state.dob,phoneNo : this.state.phoneNo,email : this.state.email , description : this.state.description }
       this.props.personalDataUpdate(obj); 
-      sessionStorage.setItem('personal' , JSON.stringify(obj) );    
+      sessionStorage.setItem('personal' , JSON.stringify(obj) );
     };
 
     handleChange = (event) => {
@@ -85,6 +86,16 @@ class PersonDetails extends React.Component {
                 <Col>
                   Phone Number:
                   <Form.Control type="tel" name="phoneNo" pattern="[+]{1}[0-9]{2}-[0-9]{10}" placeholder=' Eg +91-834532XXXXX' defaultValue={this.state.phoneNo} onChange={this.handleChange} />
+                </Col>
+              </Row>
+            </Form.Group>
+            <Form.Group className="p-3">
+              <Row>
+                <Col>
+                  About You
+                  <div className={styles.description}>
+                    <textarea className="form-control" type="text" name="description" value={this.state.description} placeholder="Write something about yourself" onChange={this.handleChange} />
+                  </div>
                 </Col>
               </Row>
             </Form.Group>

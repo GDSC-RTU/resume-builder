@@ -8,7 +8,7 @@ export class Template extends Component{
 	const educationDetailsValues = JSON.parse(sessionStorage.getItem('education'));
 	const experienceDetailsValues = JSON.parse(sessionStorage.getItem('experience'));
 	const projectDetailsValues = JSON.parse(sessionStorage.getItem('project'));
-	console.log(personalDetailsValues.firstName,educationDetailsValues,experienceDetailsValues,projectDetailsValues)
+	console.log(personalDetailsValues,educationDetailsValues,experienceDetailsValues,projectDetailsValues)
 
     return(
         <div id="doc2" className="yui-t7">
@@ -24,6 +24,7 @@ export class Template extends Component{
 					<div className="contact-info">
                     <h3><a href={`$personalDetailsValues.email`}>{personalDetailsValues.email}</a></h3>
 						<h3>{personalDetailsValues.phoneNo}</h3>
+						<h3>Date of Birth : {personalDetailsValues.dob}</h3>
 					</div>	
 				</div>
 			</div>
@@ -35,8 +36,7 @@ export class Template extends Component{
 		<div id="about-me">
 			<div id="yui-gf">
 				<h2>About Me</h2>
-				<h4>I'm a hardworking person with a lot of skills.</h4>	
-				<h4>Date of Birth : {personalDetailsValues.dob}</h4>
+				<h4>{personalDetailsValues.description}</h4>	
 			</div>
 		</div>
 
@@ -95,17 +95,18 @@ export class Template extends Component{
 
 					<div className="yui-gf">
 	
-						<div className="yui-u first">
+						<div className="yui-u first exp">
 							<h2>Experience</h2>
 						</div>
 
-						<div className="yui-u">
-
+						<div className="last">
 							<div className="job">
 								<h2>{experienceDetailsValues.employer}</h2>
-								<h3>{experienceDetailsValues.job_title}</h3>
-								<h4>{experienceDetailsValues.start_month}&nbsp;{experienceDetailsValues.start_year} - {experienceDetailsValues.isCheckedExperience? <>Present</>:<>{experienceDetailsValues.end_month} {experienceDetailsValues.end_year}</>}</h4>
-								<p>Intrinsicly enable optimal core competencies through corporate relationships. Conveniently initiate virtual paradigms and top-line convergence. </p>
+								<div className="title-date">
+									<span><h3>{experienceDetailsValues.job_title}</h3></span>
+									<span><h3>{experienceDetailsValues.start_month}&nbsp;{experienceDetailsValues.start_year} - {experienceDetailsValues.isCheckedExperience? <>Present</>:<>{experienceDetailsValues.end_month} {experienceDetailsValues.end_year}</>}</h3></span>
+								</div>
+								<p>{experienceDetailsValues.exp_description}</p>
 							</div>
 						</div>
 					</div>
@@ -116,7 +117,7 @@ export class Template extends Component{
 						</div>
 						<div className="education">
 							<h2>{educationDetailsValues.college_name} - {educationDetailsValues.city_college}, {educationDetailsValues.state_college}</h2>
-							<div className='gpa'><h3>{educationDetailsValues.degree}, {educationDetailsValues.field_of_study}</h3><strong>4.0 GPA</strong></div>
+							<div className='gpa'><h3>{educationDetailsValues.degree}, {educationDetailsValues.field_of_study}</h3><h3 className='gpa-no'><strong> &nbsp; {educationDetailsValues.gpa} GPA</strong></h3></div>
 						</div>
 					</div>
 					

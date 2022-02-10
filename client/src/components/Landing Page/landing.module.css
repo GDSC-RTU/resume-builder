@@ -19,6 +19,40 @@ img{
     padding: 3em;
 }
 
+li{
+    border-bottom: 0px;
+}
+
+.q1{
+    animation-name: slideinleft;
+    animation-duration: 1.2s;
+}
+
+.q2{
+    animation-name: slideinright;
+    animation-duration: 1.5s;
+}
+
+@keyframes slideinleft {
+    from {
+        margin-left: 100%;
+      }
+    
+    to {
+        margin-left: 0%;
+    }
+}
+
+@keyframes slideinright {
+    from {
+      margin-left: -100%;
+    }
+  
+    to {
+      margin-left: 0%;
+    }
+}
+
 .answer{
     display: flex;
     padding: 0em 5em 5em 5em;
@@ -44,7 +78,7 @@ img{
 }
 
 .link:hover{
-    color: lightgray;
+    color: rgba(37, 24, 24, 0.466);
 }
 
 .createButton{

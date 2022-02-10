@@ -52,7 +52,7 @@ class Project extends React.Component {
             </Container>
             <Form.Group className='m-4'>
                     <Link className={styles.link} to="/experience">Back</Link>
-                    <Link className={styles.link1} to="/finish" onClick={this.saveAndContinue}>Finish</Link>   
+                    <Link className={styles.link1} to="/downloadpdf" onClick={this.saveAndContinue}>Finish</Link>   
             </Form.Group>
             </div>
             <div className={styles.img}><img src={picture_sample} alt="sample resume" width='200' height='200' /></div>

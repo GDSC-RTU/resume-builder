@@ -12,7 +12,7 @@
 .img{
     display: flex;
     justify-content: space-around;
-    align-self: center;
+    padding-top: 5em;
     width: 30%;
 }
 

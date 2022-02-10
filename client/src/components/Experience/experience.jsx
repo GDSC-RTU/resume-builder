@@ -17,11 +17,12 @@ class Experience extends React.Component {
           end_month : 'February',
           end_year: '2022',
           isCheckedExperience: false,
+          exp_description:''
         };
       }
 
       saveAndContinue=()=>{
-          const obj={ employer : this.state.employer,job_title : this.state.job_title,city_job : this.state.city_job,city_state : this.state.city_state,start_month : this.state.start_month,start_year : this.state.start_year,end_month : this.state.end_month,end_year: this.state.end_year,isCheckedExperience : this.state.isCheckedExperience }
+          const obj={ employer : this.state.employer,job_title : this.state.job_title,city_job : this.state.city_job,city_state : this.state.city_state,start_month : this.state.start_month,start_year : this.state.start_year,end_month : this.state.end_month,end_year: this.state.end_year,isCheckedExperience : this.state.isCheckedExperience , exp_description : this.state.exp_description}
           this.props.experienceDataUpdate(obj);
           sessionStorage.setItem('experience' , JSON.stringify(obj) );
       }
@@ -208,6 +209,16 @@ class Experience extends React.Component {
                 </Dropdown.Menu>
               </Dropdown>
               </Col></>:<></>}
+            <Form.Group className="p-3">
+              <Row>
+                <Col>
+                  Experience Description
+                  <div className={styles.description}>
+                    <textarea className="form-control" type="text" name="exp_description" value={this.state.exp_description} placeholder="Write something about your experience at the job" onChange={this.handleChange} />
+                  </div>
+                </Col>
+              </Row>
+            </Form.Group>
             </Row>
               </Form.Group>
                   <div className="p-3">

@@ -8,6 +8,11 @@
     width: 60%;
 }
 
+.description{
+    display: flex;
+    min-height: 100px;
+}
+
 .img{
     display: flex;
     justify-content: center;

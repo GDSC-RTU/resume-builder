@@ -17,7 +17,8 @@ class Education extends React.Component {
           custom_degree: '',
           degree : "Select A Degree",
           isCustomDegree : false,
-          currently_studying : false
+          currently_studying : false,
+          gpa:''
         };
       }
 
@@ -28,12 +29,12 @@ class Education extends React.Component {
     saveAndContinue=()=>{
       if( this.state.degree==='Custom Degree' )
       {
-        const obj={ college_name : this.state.college_name,city_college : this.state.city_college,state_college : this.state.state_college,field_of_study : this.state.field_of_study, graduating_year : this.state.graduating_year , degree : this.state.custom_degree , currently_studying : this.state.currently_studying}
+        const obj={ college_name : this.state.college_name,city_college : this.state.city_college,state_college : this.state.state_college,field_of_study : this.state.field_of_study, graduating_year : this.state.graduating_year , degree : this.state.custom_degree , currently_studying : this.state.currently_studying , gpa : this.state.gpa}
         this.props.educationDataUpdate(obj);
         sessionStorage.setItem('personal' , JSON.stringify(obj) );
       }
       else{
-        const obj={ college_name : this.state.college_name,city_college : this.state.city_college,state_college : this.state.state_college,field_of_study : this.state.field_of_study, graduating_year : this.state.graduating_year , degree : this.state.degree}
+        const obj={ college_name : this.state.college_name,city_college : this.state.city_college,state_college : this.state.state_college,field_of_study : this.state.field_of_study, graduating_year : this.state.graduating_year , degree : this.state.degree , gpa : this.state.gpa}
         this.props.educationDataUpdate(obj);
         sessionStorage.setItem('education' , JSON.stringify(obj) );
       }
@@ -49,6 +50,12 @@ class Education extends React.Component {
 
     getYear(i){
       return(this.state.year_list[i])
+    }
+
+    toggleChange=()=>{
+      this.setState({
+        currently_studying: !this.state.currently_studying
+      })
     }
     
     render() { 
@@ -123,6 +130,11 @@ class Education extends React.Component {
                   <Form.Control type='text' name="field_of_study" defaultValue={this.state.field_of_study} onChange={this.handleChange}/>
                 </Col>
                 <Col>
+                  GPA
+                  <Form.Control name="gpa" defaultValue={this.state.gpa} onChange={this.handleChange}/>
+                </Col>
+                {!this.state.currently_studying?<>
+                <Col>
                 Graduating Year
                 <Dropdown>
                   <Dropdown.Toggle id="dropdown-button-dark-example1" variant="dark">
@@ -161,6 +173,7 @@ class Education extends React.Component {
                 </Dropdown.Menu>
                 </Dropdown>
                 </Col>
+                </>:<></>}
                 <Col>
                   <Form.Check type='checkbox' id={`default-checkbox`} value={this.state.currently_studying} label={`currently studying`} onClick={()=>this.toggleChange()}/>
                 </Col>
@@ -173,7 +186,7 @@ class Education extends React.Component {
         </Form>
         </Container>
         </div>
-        <div className={styles.img}><img src={picture_sample} alt="sample resume" width='200' height='200' /></div>
+        <div className={styles.img}><img src={picture_sample} alt="sample resume" width='300' height='200' /></div>
         </div>
         </>
     );
