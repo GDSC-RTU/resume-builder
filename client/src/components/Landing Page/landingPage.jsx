@@ -15,7 +15,7 @@ function LandingPage(){
                 <div className={styles.img}><img src={picture_job} alt="professional cartoon resume"></img></div>
                 <div className={styles.text}>
                     <h3>
-                        <li>A resume is a formal document that provides an overview of your professional qualifications, including your relevant work experience, skills, education, and notable accomplishments</li> 
+                        <li>A resume is a formal document that provides an overview of your professional qualifications, including your relevant work experience, skills, education, and notable accomplishments</li><br/>
                         <li>Usually paired with a cover letter, a resume helps you demonstrate your abilities and convince employers you’re qualified and hireable</li></h3>
                 </div>
             </div>
@@ -25,7 +25,7 @@ function LandingPage(){
             <div className={styles.question}><h1>Why Is a Resume Important?</h1></div>
                 <div className={styles.answer}>
                 <div className={styles.text}>
-                    <h3><li>A resume is an important tool for your job search because it offers a page or two where you can display your top skills and qualities</li><li>However, a resume is much more than that</li><li>Resumes help employers make hiring decisions and help you get your first interview</li> That's why it matters how you structure your resume and what information you decide to include<li> In this article, you'll learn why a resume is important and get actionable resume tips that may help you achieve your next career move</li></h3>
+                    <h3><li>A resume is an important tool for your job search because it offers a page or two where you can display your top skills and qualities</li><br/><li>Resumes help employers make hiring decisions and help you get your first interview</li><br/><li>That's why it matters how you structure your resume and what information you decide to include</li><br/><li> In this article, you'll learn why a resume is important and get actionable resume tips that may help you achieve your next career move</li></h3>
                 </div>
                 <div className={styles.img}><img src={picture_resume} alt="professional cartoon resume"></img></div>
             </div>

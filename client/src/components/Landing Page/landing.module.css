@@ -25,7 +25,7 @@ li{
 
 .q1{
     animation-name: slideinleft;
-    animation-duration: 1.2s;
+    animation-duration: 1.0s;
 }
 
 .q2{
@@ -84,4 +84,9 @@ li{
 .createButton{
     display: flex;
     justify-content: center;
+ }
+
+ span{
+     font-weight: bold;
+     font-size: 24px;
  }
