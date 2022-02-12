@@ -1,6 +1,6 @@
 .container{
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     justify-content: center;
     padding-top: 2em;
 }
@@ -12,10 +12,9 @@
 .img{
     display: flex;
     justify-content: space-around;
-    padding-top: 5em;
+    align-self: center;
     width: 30%;
 }
-
 .link{
     background-color: black;
     color: white;
@@ -41,15 +40,4 @@
 .link1:hover{
     background-color: rgba(10, 9, 9, 0.76);
     color: white;
-}
-
-.project{
-    overflow-wrap: break-word;
-    padding: 20px;
-    border: 1px solid black;
-}
-
-.span{
-    font-size: 20px;
-    font-weight: bold;
 }

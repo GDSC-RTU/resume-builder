@@ -1,7 +1,6 @@
 import React from 'react';
 import {v4 as uuid} from 'uuid';
-import Button from 'react-bootstrap/Button';
-import Form from  'react-bootstrap/Form';
+import { Button , Form, Row , Col } from 'react-bootstrap';
 
 class ProjectForm extends React.Component {
     constructor(props) {
@@ -33,29 +32,30 @@ class ProjectForm extends React.Component {
         this.setState({ project_name : '' });
         this.setState({ link_url : '' });
         this.setState({ description : '' });}
+        else{
+            alert('Input field cannot be empty!')
+        }
     }
 
     render() { 
         return (
-        <div>
             <Form>
-                <span>
-                Project Name : 
-                <input type="text" name="project_name" value={this.state.project_name} onChange={this.handleChange}></input>
-                </span>
-                <span>
-                Link
-                <input type="text" name="link_url" value={this.state.link_url} onChange={this.handleChange}></input>
-                </span>
-                <br/>
-                <span>
-                Description : 
-                <input type="text" name="description" value={this.state.description} onChange={this.handleChange}></input>
-                </span>
-                <br/>
-                <Button type="Add" onClick={this.handleAdd}>Add</Button>
+                <Form.Group>
+                    <Row>
+                        <Col>
+                    Project Name : 
+                    <Form.Control type="text" name="project_name" value={this.state.project_name} onChange={this.handleChange}></Form.Control>
+                        </Col>
+                        <Col>
+                    Link
+                    <Form.Control type="text" name="link_url" value={this.state.link_url} onChange={this.handleChange}></Form.Control>
+                    </Col>
+                    </Row>
+                    Description : 
+                    <Form.Control type="text" name="description" value={this.state.description} onChange={this.handleChange}></Form.Control>
+                </Form.Group>
+                <Button className='m-3' onClick={this.handleAdd}>Add</Button> 
             </Form> 
-        </div>
     )}
 }
  

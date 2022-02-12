@@ -1,24 +1,28 @@
-.container{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.main{
-    width: 60%;
-}
-
-.description{
-    display: flex;
-    min-height: 100px;
-}
-
-.img{
+.menu{
     display: flex;
     justify-content: center;
-    width: 30%;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
+.navbar{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    justify-content: center;
+    align-content: center;
+    padding: 20px;
+}
+
+.breadcrumb{
+    display: flex;
+}
+
 .link{
+    display: flex;
+    justify-content: center;
     background-color: black;
     color: white;
     padding: 10px;
