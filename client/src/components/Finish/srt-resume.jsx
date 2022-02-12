@@ -9,7 +9,7 @@ class Srtresume extends Component{
 	<div>
     <Navbar array={[""]}/>
     <ReactToPrint
-            documentTitle={`resume${JSON.parse(sessionStorage.getItem('personal')).firstName}`}
+            documentTitle={`Resume_${JSON.parse(sessionStorage.getItem('personal')).firstName}`}
             content={() => this.componentRef}
             trigger={() => <button className="btn btn-primary">Print to PDF!</button>}
     />

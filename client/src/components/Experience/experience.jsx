@@ -8,14 +8,14 @@ class Experience extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-          employer : 'Oracle',
-          job_title : 'Frontend Intern',
-          city_job : 'Bangalore',
-          city_state : 'Karnataka',
-          start_month : 'January',
-          start_year : '2021',
-          end_month : 'February',
-          end_year: '2022',
+          employer : '',
+          job_title : '',
+          city_job : '',
+          city_state : '',
+          start_month : '',
+          start_year : '',
+          end_month : '',
+          end_year: '',
           isCheckedExperience: false,
           exp_description:''
         };
