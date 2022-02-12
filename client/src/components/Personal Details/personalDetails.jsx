@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col ,Row , Form } from 'react-bootstrap';
+import { Col ,Row , Form, Button } from 'react-bootstrap';
 import styles from './personaldetails.module.css';
 import Navbar from '../../uikit/Navbar/Navbar';
 import { Link } from 'react-router-dom';
@@ -49,13 +49,13 @@ class PersonDetails extends React.Component {
                 </Col>
                 <Col>
                   Last Name:
-                  <Form.Control type="text" name="lastName" defaultValue={this.state.lastName} onChange={this.handleChange} />
+                  <Form.Control type="text" name="lastName" defaultValue={this.state.lastName} required onChange={this.handleChange} />
                 </Col>
               </Row>
             </Form.Group>           
             <Form.Group className="p-3">
               Address
-              <Form.Control type="text" name="address" defaultValue={this.state.address} onChange={this.handleChange} />
+              <Form.Control type="text" name="address" defaultValue={this.state.address} required onChange={this.handleChange} />
             </Form.Group>
             <Form.Group className="p-3">
               <Row>
@@ -101,7 +101,10 @@ class PersonDetails extends React.Component {
             </Form.Group>
           
           <Form.Group className='p-3'>
-            <Link className={styles.link} to="/education" onClick={this.saveAndContinue}>Save and Continue</Link>
+            { (this.state.firstName===''||this.state.lastName===''||this.state.address===''||this.state.city===''||this.state.country===''|| this.state.zip===''||this.state.dob===''||this.state.phoneNo===''||this.state.email===''||this.state.description==='')?
+              <Button onClick={()=>alert('Input field cannot be empty!')}>Save and Continue</Button>
+              :
+              <Link className={styles.link} to="/education" onClick={this.saveAndContinue}>Save and Continue</Link>}
           </Form.Group>
           </Form>
           

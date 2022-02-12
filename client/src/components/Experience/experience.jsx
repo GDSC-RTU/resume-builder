@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Form, Row , Container, Dropdown } from 'react-bootstrap';
+import { Col, Form, Row , Container, Dropdown , Button } from 'react-bootstrap';
 import styles from './experience.module.css';
 import Navbar from '../../uikit/Navbar/Navbar';
 import { Link } from 'react-router-dom';
@@ -228,7 +228,11 @@ class Experience extends React.Component {
                   </div>
             <Form.Group className='m-5'>
               <Link className={styles.link} to="/education">Back</Link>
-              <Link className={styles.link1} to="/project" onClick={this.saveAndContinue}>Save and Continue</Link>   
+              &emsp;
+              { (this.state.employer===''||this.state.job_title===''||this.state.city_job===''||this.state.city_state===''||this.state.start_month===''|| this.state.start_year===''||this.state.exp_description==='')?
+                <Button onClick={()=>alert('Input field cannot be empty!')}>Save and Continue</Button>
+                :
+              <Link className={styles.link1} to="/project" onClick={this.saveAndContinue}>Save and Continue</Link>} 
             </Form.Group>  
         </Form>
         </Container>

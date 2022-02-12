@@ -78,7 +78,7 @@ export class Template extends Component{
 								</div>
 						</div>
 					</div> */}
-
+					{projectDetailsValues.list.length!==0?
 					<div className="yui-gf">
 						<div className="yui-u first">
 							<h2>My Projects</h2>
@@ -91,7 +91,7 @@ export class Template extends Component{
 								<p><b>Description : </b>{e.description}</p>
 							</ul>)}
 						</div>
-					</div>
+					</div>:<></>}
 
 					<div className="yui-gf">
 	

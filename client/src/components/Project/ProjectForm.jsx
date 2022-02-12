@@ -32,6 +32,9 @@ class ProjectForm extends React.Component {
         this.setState({ project_name : '' });
         this.setState({ link_url : '' });
         this.setState({ description : '' });}
+        else{
+            alert('Input field cannot be empty!')
+        }
     }
 
     render() { 

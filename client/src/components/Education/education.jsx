@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row , Col, Container, Form, Dropdown } from 'react-bootstrap';
+import { Row , Col, Container, Form, Dropdown , Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Navbar from '../../uikit/Navbar/Navbar';
 import styles from './education.module.css';
@@ -106,6 +106,8 @@ class Education extends React.Component {
                       <Dropdown.Item  onClick={this.changeDegree} className="Associate of Applied Science-">Associate of Applied Science</Dropdown.Item>
                       <Dropdown.Item  onClick={this.changeDegree} className="Bachelor of Arts-">Bachelor of Arts</Dropdown.Item>
                       <Dropdown.Item  onClick={this.changeDegree} className="Bachelor of Science-">Bachelor of Science</Dropdown.Item>
+                      <Dropdown.Item  onClick={this.changeDegree} className="Bachelor of Technology-">Bachelor of Technology</Dropdown.Item>
+                      <Dropdown.Item  onClick={this.changeDegree} className="Bachelor of Engineering-">Bachelor of Engineering</Dropdown.Item>
                       <Dropdown.Item  onClick={this.changeDegree} className="BBA-">BBA</Dropdown.Item>
                       <Dropdown.Item  onClick={this.changeDegree} className="Master of Arts-">Master of Arts</Dropdown.Item>
                       <Dropdown.Item  onClick={this.changeDegree} className="Master of Science-">Master of Science</Dropdown.Item>
@@ -135,7 +137,7 @@ class Education extends React.Component {
                 </Col>
                 {!this.state.currently_studying?<>
                 <Col>
-                Graduating Year
+                Year of Graduation
                 <Dropdown>
                   <Dropdown.Toggle id="dropdown-button-dark-example1" variant="dark">
                     {this.state.graduating_year}
@@ -181,7 +183,11 @@ class Education extends React.Component {
               </Form.Group>
             <Form.Group className='m-5'>
               <Link className={styles.link} to="/personaldetails">Back</Link>
-              <Link className={styles.link1} to="/experience" onClick={this.saveAndContinue}>Save and Continue</Link>   
+              &emsp;
+              { (this.state.college_name===''||this.state.city_college===''||this.state.state_college===''||this.state.degree==='Select A Degree'||this.state.field_of_study===''|| this.state.gpa==='')?
+                <Button onClick={()=>alert('Input field cannot be empty!')}>Save and Continue</Button>
+                :
+                <Link className={styles.link} to="/experience" onClick={this.saveAndContinue}>Save and Continue</Link>}
             </Form.Group>
         </Form>
         </Container>
