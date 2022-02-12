@@ -90,3 +90,21 @@ li{
      font-weight: bold;
      font-size: 24px;
  }
+
+.line{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.or{
+    margin: 10px;
+    width: 100px;
+}
+
+.linkedin{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
