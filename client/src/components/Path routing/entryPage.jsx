@@ -4,6 +4,7 @@ import Education from '../Education/education';
 import Experience from '../Experience/experience'
 import Srtresume from '../Finish/srt-resume';
 import LandingPage from '../Landing Page/landingPage';
+import Linkedin from '../Linkedin/Linkedin';
 import PersonDetails from '../Personal Details/personalDetails';
 import Project from '../Project/Project';
 
@@ -42,6 +43,7 @@ class EntryPage extends Component {
                 <Route path="/experience" exact element={<Experience experienceDataUpdate={this.experienceData}/>}/>
                 <Route path="/project" exact element={<Project projectDataUpdate={this.projectData}/>}/>
                 <Route path="/downloadpdf" exact element={<Srtresume />}/>
+                <Route path="/linkedin" exact element={<Linkedin />}/>
             </Routes>
         </BrowserRouter>
         );
